@@ -3,7 +3,7 @@
 # 🌾 Plant Genotype Phenotypic Analysis in R
 
 > **Measuring 100 plant genotypes and turning trait data into selection decisions** 
-> a step-by-step R workflow, from first look at the data to a live web dashboard.
+> a step-by-step R workflow, from first look at the data to a live decision easy visuals.
 
 [![Plant Breeder & Genetics](https://img.shields.io/badge/🌱_Plant_Breeder_%26_Genetics-2E7D32?style=for-the-badge)](https://github.com/)
 
@@ -47,13 +47,13 @@ Each genotype is described by one ID and five measured/scored traits:
 
 ## 🗂️ Project Modules
 
-Five numbered scripts — run them in order, each one builds on the previous.
+Five numbered scripts runnig them in order, each one builds on the previous data.
 
 | SR | Project name | Script name | What it does (in plain words) | Packages |
 |:-:|--------|--------|-------------------------------|----------|
-| 1 | **Exploratory Data Analysis** | [`exploratory_data_analysis`] | First look at the data — summary stats, correlations, bar & scatter plots | `readxl` `dplyr` `ggplot2` |
-| 2 | **ANOVA & Post-Hoc Test** | [`anova_and_posthoc`] | Checks if genotypes truly differ (One-Way ANOVA) and ranks them (Duncan's Test); exports `.tiff` boxplots | `agricolae` |
-| 3 | **Linear Regression** | [`linear_regression`] | Predicts one trait from another; reports R² and residual diagnostics | `stats` `ggplot2` |
+| 1 | **Exploratory Data Analysis** | [`exploratory_data_analysis`] | summary stats, correlations, bar & scatter plots | `readxl` `dplyr` `ggplot2` |
+| 2 | **ANOVA & Post-Hoc Test** | [`anova_and_posthoc`] | Checks if genotypes truly differ (One-Way ANOVA) and ranks them (Duncan's Test); exports `.png` boxplots | `agricolae` |
+| 3 | **Linear Regression** | [`linear_regression`] | Predicts one trait from another, reports R² and residual offsets diagnostics | `stats` `ggplot2` |
 | 4 | **Clustering & PCA** | [`genotype_clustering_pca`] | Scales traits (Z-score), groups similar genotypes (K-Means, K = 3), visualizes with PCA biplots | `factoextra` `stats` |
 | 5 | **Shiny Dashboard** | [`shiny_dashboard`] | A web app to filter and plot traits — no coding needed to explore | `shiny` `dplyr` `ggplot2` |
 
@@ -61,11 +61,11 @@ Five numbered scripts — run them in order, each one builds on the previous.
 
 | Step | Question |
 |:---:|---|
-|  `01` | *What does my data look like?* |
-|  `02` | *Are the genotypes really different and which ones are the best?* |
-|  `03` | *Can one trait predict another?* *(indirect selection)* |
-|  `04` | *Which genotypes are alike and which are diverse enough for crossing?* |
-|  `05` | *Can I explore the results without writing code?* |
+|  `1` | *What does my data look like?* |
+|  `2` | *Are the genotypes really different and which ones are the best?* |
+|  `3` | *Can one trait predict another?* *(indirect selection)* |
+|  `4` | *Which genotypes are alike and which are diverse enough for crossing?* |
+|  `5` | *Can I explore the results without writing code?* |
 
 ---
 
@@ -91,13 +91,13 @@ graph LR
 
 **Description:**
 
-This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ significantly across the three **Leaf Colour (`LC`)** groups — *Light Green, Green, Dark Green* — using **One-Way ANOVA**, followed by **Duncan's Multiple Range Test** to rank the groups. Final output is a **publication-ready boxplot** exported at 600 dpi.
+This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ significantly across the three **Leaf Colour (`LC`)** groups — **Light Green, Green, Dark Green** using **One-Way ANOVA**, followed by **Duncan's Multiple Range Test** to rank the groups. Final output is a **publication ready boxplot** exported at 600 dpi.
 
 ---
 
 #### 📊 Results & Outputs
 
-##### One-Way ANOVA — All Traits vs. Leaf Colour
+##### One-Way ANOVA —> All Traits vs. Leaf Colour
 
 *Shows:* Whether leaf colour has a statistically significant effect on each trait (`α = 0.05`)
 
@@ -119,7 +119,7 @@ This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ signif
 
 ---
 
-##### Duncan's Multiple Range Test — Group Means & Letters
+##### Duncan's Multiple Range Test —> Group Means & Letters
 
 *Shows:* Mean of each leaf colour group per trait, with significance groupings
 
@@ -147,7 +147,7 @@ This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ signif
 
 **Interpretation:**
 
-- Clear vertical separation of groups — medians step down from Dark → Light Green
+- Clear vertical separation of groups of medians step down from Dark → Light Green
 - Narrow boxes (low SD: 1.4 – 3.2) indicate **consistent performance within groups**
 - No genotype in Light Green reaches even the lower quartile of Dark Green
 
@@ -159,4 +159,4 @@ This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ signif
 2. **Consistent performance ranking:** Mean values declined stepwise from Dark Green → Green → Light Green for every trait, and Duncan's test placed each group into a separate significance class (a / b / c).
 3. **Field relevance:** Dark Green genotypes recorded ~14% greater plant length and ~19% greater root length than Light Green genotypes, supporting leaf colour as a simple, low-cost visual indicator of plant vigour during field screening.
 4. **Experimental design note:** Replication was unequal across groups (Dark = 40, Green = 40, Light = 20); this unbalanced design should be stated in the methodology.
-5. **Basis for further analysis:** These confirmed group differences provide the statistical foundation for trait-relationship modelling (Project 3) and multivariate genotype clustering (Project 4).
+5. **Basis for further analysis:** These confirmed group differences provide the statistical foundation for trait relationship modelling (Project 3) and multivariate genotype clustering (Project 4).
