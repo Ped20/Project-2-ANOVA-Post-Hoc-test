@@ -101,7 +101,7 @@ This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ signif
 
 *Shows:* Whether leaf colour has a statistically significant effect on each trait (`α = 0.05`)
 
-**📄 Full Report:** [Download the complete ANOVA & Duncan's Test output (PDF)](./results/anova and posthoc.pdf)
+**📄 Full Report:** [Download the complete ANOVA & Duncan's Test output (PDF)](./results/anova_posthoc_analysis.pdf.pdf)
 
 | Trait | Df (LC) | Df (Residuals) | Mean Sq | F value | Pr(>F) | Signif. |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|
