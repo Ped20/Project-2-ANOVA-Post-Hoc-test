@@ -87,7 +87,7 @@ graph LR
 
 ### 2️⃣ Statistical Comparison of Leaf Colour Groups (ANOVA & Duncan's Test)
 
-**Script:** [`02_anova_and_posthoc.R`](.results/2_anova_and_posthoc.R)
+**Script:** [`02_anova_and_posthoc.R`](./results/2_anova_and_posthoc.R)
 
 **Description:**
 
@@ -101,7 +101,7 @@ This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ signif
 
 *Shows:* Whether leaf colour has a statistically significant effect on each trait (`α = 0.05`)
 
-**📄 Full Report:** [Download the complete ANOVA & Duncan's Test output (PDF)](.results/anova and posthoc.pdf)
+**📄 Full Report:** [Download the complete ANOVA & Duncan's Test output (PDF)](./results/anova and posthoc.pdf)
 
 | Trait | Df (LC) | Df (Residuals) | Mean Sq | F value | Pr(>F) | Signif. |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -141,7 +141,7 @@ This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ signif
 
 ##### Publication-Ready Boxplot
 
-![Boxplot of Height by Leaf Colour](.results/leaf_colour_boxplot.png)
+![Boxplot of Height by Leaf Colour](./results/leaf_colour_boxplot.png)
 
 *Shows:* Distribution of plant Length (`L`) across the three leaf colour groups (600 dpi PNG)
 
