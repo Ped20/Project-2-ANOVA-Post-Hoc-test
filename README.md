@@ -84,3 +84,79 @@ graph LR
 
 ---
 ## 📈 Project Results & Showcase
+
+### 2️⃣ Statistical Comparison of Leaf Colour Groups (ANOVA & Duncan's Test)
+
+**Script:** [`02_anova_and_posthoc.R`](.results/2_anova_and_posthoc.R)
+
+**Description:**
+
+This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ significantly across the three **Leaf Colour (`LC`)** groups — *Light Green, Green, Dark Green* — using **One-Way ANOVA**, followed by **Duncan's Multiple Range Test** to rank the groups. Final output is a **publication-ready boxplot** exported at 600 dpi.
+
+---
+
+#### 📊 Results & Outputs
+
+##### One-Way ANOVA — All Traits vs. Leaf Colour
+
+*Shows:* Whether leaf colour has a statistically significant effect on each trait (`α = 0.05`)
+
+**📄 Full Report:** [Download the complete ANOVA & Duncan's Test output (PDF)](.results/anova and posthoc.pdf)
+
+| Trait | Df (LC) | Df (Residuals) | Mean Sq | F value | Pr(>F) | Signif. |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|
+| `L` | 2 | 97 | 913.60 | 107.5 | < 2e-16 | `***` |
+| `B` | 2 | 97 | 23.20 | 89.4 | < 2e-16 | `***` |
+| `SL` | 2 | 97 | 576.00 | 112.0 | < 2e-16 | `***` |
+| `RL` | 2 | 97 | 151.74 | 114.3 | < 2e-16 | `***` |
+
+`Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1`
+
+**Key Findings:**
+
+- Leaf colour has a **highly significant effect (p < 0.001)** on every measured trait
+- Strongest group separation observed for **Root Length** (F = 114.3) and **Shoot Length** (F = 112.0)
+
+---
+
+##### Duncan's Multiple Range Test — Group Means & Letters
+
+*Shows:* Mean of each leaf colour group per trait, with significance groupings
+
+| Leaf Colour | n (r) | `L` (cm) | `B` (cm) | `SL` (cm) | `RL` (cm) |
+|---|:-:|:-:|:-:|:-:|:-:|
+| **Dark Green** | 40 | 94.27 <sup>a</sup> | 9.11 <sup>a</sup> | 66.07 <sup>a</sup> | 29.60 <sup>a</sup> |
+| **Green** | 40 | 88.65 <sup>b</sup> | 8.15 <sup>b</sup> | 61.65 <sup>b</sup> | 27.30 <sup>b</sup> |
+| **Light Green** | 20 | 82.82 <sup>c</sup> | 7.31 <sup>c</sup> | 56.96 <sup>c</sup> | 24.93 <sup>c</sup> |
+
+*Means sharing the same letter are **not** significantly different (α = 0.05).*
+
+**Key Findings:**
+
+- **Perfect ranking on all traits:** Dark Green > Green > Light Green — every trait
+- All three groups form **separate letter groups (a / b / c)** — no overlap anywhere
+- Dark Green lines outperform Light Green lines by **~14% in Length** and **~19% in Root Length**
+
+---
+
+##### Publication-Ready Boxplot
+
+![Boxplot of Height by Leaf Colour](.results/leaf_colour_boxplot.png)
+
+*Shows:* Distribution of plant Length (`L`) across the three leaf colour groups (600 dpi PNG)
+
+**Interpretation:**
+
+- Clear vertical separation of groups — medians step down from Dark → Light Green
+- Narrow boxes (low SD: 1.4 – 3.2) indicate **consistent performance within groups**
+- No genotype in Light Green reaches even the lower quartile of Dark Green
+
+---
+
+#### 🔍 Key Insights from Project 2:
+
+1. **Significant leaf colour effect:** All four traits differed significantly among the three leaf colour groups (p < 0.001), confirming that leaf colour is associated with overall plant growth.
+2. **Consistent performance ranking:** Mean values declined stepwise from Dark Green → Green → Light Green for every trait, and Duncan's test placed each group into a separate significance class (a / b / c).
+3. **Field relevance:** Dark Green genotypes recorded ~14% greater plant length and ~19% greater root length than Light Green genotypes, supporting leaf colour as a simple, low-cost visual indicator of plant vigour during field screening.
+4. **Experimental design note:** Replication was unequal across groups (Dark = 40, Green = 40, Light = 20); this unbalanced design should be stated in the methodology.
+5. **Basis for further analysis:** These confirmed group differences provide the statistical foundation for trait-relationship modelling (Project 3) and multivariate genotype clustering (Project 4).
