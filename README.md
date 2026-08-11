@@ -160,3 +160,10 @@ This module tests whether phenotypic traits (`L`, `B`, `SL`, `RL`) differ signif
 3. **Field relevance:** Dark Green genotypes recorded ~14% greater plant length and ~19% greater root length than Light Green genotypes, supporting leaf colour as a simple, low-cost visual indicator of plant vigour during field screening.
 4. **Experimental design note:** Replication was unequal across groups (Dark = 40, Green = 40, Light = 20); this unbalanced design should be stated in the methodology.
 5. **Basis for further analysis:** These confirmed group differences provide the statistical foundation for trait relationship modelling (Project 3) and multivariate genotype clustering (Project 4).
+---
+---
+<div align="center">
+
+**Data → Code → Decision → Results**
+
+*Research Repeat & Reproduce.*
